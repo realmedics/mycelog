@@ -1,0 +1,27 @@
+<h1>My CE Classes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>CE Class Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+<tbody>
+  <% @myces.each do |myce| %>
+    <tr>
+      <td><%= myce.title %></td>
+      <td><%= link_to 'Show', myce %></td>
+      <td><%= link_to 'Edit', edit_myce_path(myce) %></td>
+      <td><%= link_to 'Destroy', myce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Myce', new_myce_path %>
